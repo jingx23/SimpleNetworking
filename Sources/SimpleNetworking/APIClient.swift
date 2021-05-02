@@ -29,7 +29,7 @@
     /// in conjunction with the `APIRequest` type, which encapsulates a specific API request as well
     /// as how to decode its response.
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    public class APIClient {
+    open class APIClient {
         /// The base URL to which the API request paths are appended.
         public let baseURL: URL
 
