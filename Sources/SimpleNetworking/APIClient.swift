@@ -37,7 +37,7 @@
         public let configuration: APIClientConfiguration
 
         /// This logger emits requests and responses at debug level.
-        private var logger: APIClientLogger?
+        private var logger: APIClientLoggerProtocol?
 
         private let session: URLSession
 
@@ -51,7 +51,7 @@
             baseURL: URL,
             configuration: APIClientConfiguration = APIClientConfiguration(),
             session: URLSession = URLSession(configuration: .default),
-            logger: APIClientLogger? = nil
+            logger: APIClientLoggerProtocol? = nil
         ) {
             self.baseURL = baseURL
             self.configuration = configuration

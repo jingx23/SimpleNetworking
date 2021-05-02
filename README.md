@@ -179,9 +179,9 @@ func popularItems(page: Int) -> AnyPublisher<[MovieItem], APIClientError<Status>
 ```
 
 ## Logging requests and responses
-Each `APIClient` instance logs requests and responses using a [SwiftLog](https://github.com/apple/swift-log) logger.
+If you use your own logging framework you can implement the  `APIClientLoggerProtocol`, so you can pass the Logger to the `APIClient` instance.
 
-To see requests and responses logs as they happen, you need to specify the `.debug` log-level when constructing the APIClient.
+To see requests and responses logs as they happen, you can use the  `APIClientConsoleLogger`.
 
 ```Swift
 let tmdbClient = APIClient(
@@ -189,7 +189,7 @@ let tmdbClient = APIClient(
     configuration: APIClientConfiguration(
         ...
     ),
-    logLevel: .debug
+    logger: APIClientConsoleLogger()
 )
 ```
 
